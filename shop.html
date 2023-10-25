@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+   <title>JRP Essentials</title>
+  </head>
+  
+  <body
+  background="">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" align="right">
+        <a class="navbar-brand" href="#" <font color="##343434" size="8" face="AR JULIAN"> JRP Essentials</a></font>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" 
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+            </ul></div>
+        <nav class="navbar navbar-light bg-dark" align-right>
+            <font class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #FFCF00">Search</button></font>
+              
+              <style>
+    
+                .modal-overlay {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgb(32, 32, 32);
+                    z-index: 1;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+               
+                .modal-content {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color:#FFCF00;
+                    padding: 20px;
+                    border: 2px solid #000000;
+                    border-radius: 5px;
+                }
+            </style>
+            <center>
+        
+        <button onclick="openLoginModal()" button class="btn btn-outline-success my-2 my-sm-0" type="submit" 
+        style="background-color: #FFCF00">Login</button>
+        
+        
+        <div id="loginModal" class="modal-overlay">
+            <div class="modal-content">
+                <h2 >Login</h2>
+                <form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required><br><br>
+        
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+        
+                    <input type="submit" style="background-color: white" value="Login">
+                </form><br>
+                <button onclick="closeLoginModal()"  style="background-color: white" >Close</button>
+            </div>
+        </div>
+        
+        <script>
+        
+            function openLoginModal() {
+                document.getElementById('loginModal').style.display = 'block';
+            }
+        
+            function closeLoginModal() {
+                document.getElementById('loginModal').style.display = 'none';
+            }
+        </script>
+        </center>
+        </form>
+          </nav>
+     </nav>
+     <hr>
+     <center>
+    <table>
+        <th>
+     <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="bm.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><font color="#343434" size="5" face="AR JULIAN">JRP Brakemaster</h5></font>
+          <p class="card-text">The Brakemaster that looks and performs good? Newly released in public market this 2022. Proper bleeding then ready to be abused</p>
+          <p class="price">$73.99</p>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #FFCF00">Buy Now</button>
+        </div>
+      </div>
+    </th>
+    <th>
+        <div class="card" style="width: 18rem;">
+           <img class="card-img-top" src="es.jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title"><font color="#343434" size="5" face="AR JULIAN">JRP Engine Support</h5></font>
+             <p class="card-text">Need a ligher yet durable engine support for your motorcycle? JRP got your back! just choose your preferred size. All plug and play</p>
+             <p class="price">$56.49</p>
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #FFCF00">Buy Now</button>
+           </div>
+         </div>
+       </th>
+       <th>
+        <div class="card" style="width: 18rem;">
+           <img class="card-img-top" src="fs.jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title"><font color="#343434" size="5" face="AR JULIAN">JRP Front Shock</h5></font>
+             <p class="card-text">When it comes to speed. Lighter means better. Front shock modified for Drag race is a must have. Grab yours now before it goes sold out!</p>
+             <p class="price">$59.99</p>
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #FFCF00">Buy Now</button>
+           </div>
+         </div>
+       </th>
+       <th>
+        <div class="card" style="width: 18rem;">
+           <img class="card-img-top" src="gt.jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title"><font color="#343434" size="5" face="AR JULIAN">JRP Alloy Gas Tank</h5></font>
+             <p class="card-text">Weight saving essential for your motorcycle? We offer you the JRP alloy gas tank. both fashion and performance. Snap fit, no adjustments needed!</p>
+             <p class="price">$74.99</p>
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #FFCF00">Buy Now</button>
+           </div>
+         </div>
+       </th>
+   
+    </table>
+</center>
+<hr>
+  </body>
