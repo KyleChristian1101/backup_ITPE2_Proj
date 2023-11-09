@@ -1,66 +1,236 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JRP Essentials</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+
     
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
 
-       
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body
-background="">
+    .product-card {
+        border: 1px solid #000000;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.1.5s;
+        padding: 15px;
+        background-color: gray;
+    }
 
-
-<button onclick="openLoginModal()">Login</button>
-
-
-<div id="loginModal" class="modal-overlay">
-    <div class="modal-content">
-        <form action="shop.html"></form>
-        <h2>Login</h2>
-        <form>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br><br>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
-
-            <input type="submit" value="Login">
-        </form>
-        <button onclick="closeLoginModal()">Close</button>
+    .product-card:hover {
+        transform: scale(1.05);
         
+    }
+
+    .card-img {
+        max-height: 200px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-weight: bold;
+    }
+
+    .card-price {
+        color: black;
+    }
+
+    .card-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        
+    }
+
+    .btn-favorite {
+        background-color: transparent;
+        border: none;
+        color: black; /* Change to your favorite color */
+    }
+
+    .btn-favorite:hover {
+        color: black; /* Change to your favorite color */
+    }
+    
+    h1.card-title {
+      text-align: center;
+      padding-top: 10px;
+      
+    }
+
+    .card-text {
+    max-height: 100px;
+    overflow: auto;
+    
+  }
+
+  .cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    color: black;
+    border-radius: 25%;
+    padding: 3px 6px;
+    font-size: 12px;
+    
+}
+
+.nav-item {
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+
+body{
+  background-color: gainsboro;
+}
+
+
+
+
+</style>
+
+<body>
+  <img src="Logo.jpg" alt="" id="Logo">
+  <div class="container mt-5">
+    
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" id="registration-tab" data-bs-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="false">Registration</a>
+          </li>
+        </ul>
+
+      <div class="tab-content" id="myTabContent">
+
+        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+          <form action="shop.html">
+              <div class="mb-3">
+                <label for="logEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="logPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+              </div>
+
+              <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" class="btn btn-link">Forgot Password?</a>
+              </div>
+            </form>
+        </div>
+
+         
+        <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="registration-tab">
+          <form>
+            <div class="mb-3">
+              <label for="regEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="regEmail" placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="regName" class="form-label">Name</label>
+              <input type="email" class="form-control" id="regEmail" placeholder="Enter your name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="regPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="regPassword" placeholder="Create a password" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="regConPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="regPassword" placeholder="Confirm password" required>
+            </div>
+              
+            <div class="container mt-3">
+              <div class="mt-2 row">
+                <label for="radioGender">Gender</label>
+
+                <div class="form-check col-4">
+                  <input class="form-check-input" type="radio" name="radioGender" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">Male</label>
+                </div>
+
+                <div class="form-check col-4">
+                  <input class="form-check-input" type="radio" name="radioGender" id="flexRadioDefault2">
+                  <label class="form-check-label" for="flexRadioDefault2">Female</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <div class="form-floating">
+                <select id="floatingSelect" class="form-select" aria-label="Default select example">
+                  <option selected>Select Year Level...</option>
+                  <option value="1">1st Year</option>
+                  <option value="2">2nd Year</option>
+                  <option value="3">3rd Year</option>
+                  <option value="4">4th Year</option>
+                </select>
+                  <label for="floatingSelect">Year Level</label>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <div class="input-group">
+                <span class="input-group-text">Address</span>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+            </div>
+
+                <div class="mt-3">
+                  <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="floatingDate" placeholder="Birthdate">
+                    <label for="floatingDate">Birthdate</label>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+                <br><br><br>
+              </form>
+            </div>
+
+          
+            <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+
+              <div class="modal-body">
+                <p>Enter your email address, and we will send you a password reset link.</p>
+                <form>
+                  <div class="mb-3">
+                    <label for="forgotPasswordEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="forgotPasswordEmail" placeholder="Enter your email">
+                  </div>
+                </form>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      </div>
     </div>
-</div>
-
-<script>
-    // JavaScript functions to open and close the login modal
-    function openLoginModal() {
-        document.getElementById('loginModal').style.display = 'block';
-    }
-
-    function closeLoginModal() {
-        document.getElementById('loginModal').style.display = 'none';
-    }
-</script>
-
+  </div>
 </body>
-</html>
